@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bounds
   - Crosshair
+  - Ping
   layers:
   - Default
   - TransparentFX

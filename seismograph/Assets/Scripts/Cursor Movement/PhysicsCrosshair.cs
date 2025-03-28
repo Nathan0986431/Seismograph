@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PhysicsCrosshair : MonoBehaviour
@@ -20,7 +22,19 @@ public class PhysicsCrosshair : MonoBehaviour
     void Update()
     {
         movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
     }
 
- 
+
+    private void onTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ping"))
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Destroy(other.gameObject);
+            }
+        }
+
+    }
 }
